@@ -3579,7 +3579,10 @@ Return ONLY a valid JSON object in the following format (do not include markdown
     const response = await fetch('/api/proxy/mistral', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: [promptMessage] })
+      body: JSON.stringify({ 
+        model: 'ministral-8b-2512',
+        messages: [promptMessage] 
+      })
     });
 
     const resJson = await response.json();
@@ -7531,7 +7534,7 @@ function loadSavedD1Credentials() {
       tableWrapper.innerHTML = tableHtml;
       subtitleEl.innerText = `Compiled ${currentReportData.length} rows successfully`;
       
-      // Trigger background PDF generation with mistral-medium-2508
+      // Trigger background PDF generation with ministral-14b-2512
       generateCFOReportPDF(type, range, model);
       
     } catch (err) {
@@ -7667,7 +7670,7 @@ function loadSavedD1Credentials() {
     const statusText = document.getElementById('pdf-progress-text');
     if (statusContainer && statusText) {
       statusContainer.style.display = 'flex';
-      statusText.innerText = 'Analyzing data with mistral-medium-2508...';
+      statusText.innerText = 'Analyzing data with ministral-14b-2512...';
       statusText.style.color = 'var(--primary)';
     }
 
@@ -7710,7 +7713,7 @@ Ensure each page contains at least 300-400 words of deeply professional, strateg
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: messages,
-          model: 'mistral-medium-2508'
+          model: 'ministral-14b-2512'
         })
       });
 

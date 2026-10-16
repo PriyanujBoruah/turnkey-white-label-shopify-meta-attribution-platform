@@ -663,7 +663,7 @@ const server = http.createServer((req, res) => {
         const mistralKey = process.env.MISTRAL_API_KEY || '';
 
         const postData = JSON.stringify({
-          model: model || 'mistral-small-2506',
+          model: model || 'ministral-8b-2512',
           messages: messages,
           temperature: 0.2
         });
