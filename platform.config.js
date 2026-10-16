@@ -72,13 +72,14 @@ const PLATFORM_CONFIG = {
   // 5. BRANDING, AGENCY IDENTITY & THEME
   // ----------------------------------------------------------------------------
   brand: {
-    appName: "TrueSignal",
-    agencyName: "TrueSignal Intelligence",
-    tagline: "Causal Attribution & Creative Intelligence",
+    appName: "Turnkey Attribution",
+    agencyName: "Turnkey Attribution Platform",
+    tagline: "White-Label Multi-Touch Attribution Engine",
     badgeText: "",
     primaryColor: "#4338ca",
     currency: "GBP", // "GBP" | "USD" | "EUR" | "AUD" | "CAD"
-    currencySymbol: "£"
+    currencySymbol: "£",
+    copyrightOwner: "Turnkey Attribution Platform Ltd."
   }
 };
 
