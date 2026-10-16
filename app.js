@@ -2525,16 +2525,27 @@ function handleGoogleSignIn() {
 }
 
 function handleSignOut() {
-  firebase.auth().signOut().catch((error) => {
-    console.error('Sign Out Failure:', error);
-  });
-}
+  sessionStorage.removeItem('truesignal_demo_active');
+  try {
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('demo')) {
+      url.searchParams.delete('demo');
+      window.history.replaceState({}, document.title, url.pathname + (url.search ? url.search : '') + (url.hash ? url.hash : ''));
+    }
+  } catch (e) {}
 
-function showAuthError(message) {
-  const alertEl = document.getElementById('auth-error-alert');
-  if (alertEl) {
-    alertEl.innerText = message;
-    alertEl.style.display = 'block';
+  const authContainer = document.getElementById('auth-container');
+  const dashboardContainer = document.getElementById('dashboard-container');
+  const profileBlock = document.getElementById('sidebar-profile');
+
+  if (authContainer) authContainer.style.display = 'flex';
+  if (dashboardContainer) dashboardContainer.style.display = 'none';
+  if (profileBlock) profileBlock.style.display = 'none';
+
+  if (typeof firebase !== 'undefined' && firebase.auth) {
+    firebase.auth().signOut().catch((error) => {
+      console.error('Sign Out Failure:', error);
+    });
   }
 }
 

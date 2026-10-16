@@ -403,20 +403,17 @@
           </div>
         </div>
         
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <!-- Interactive Sandbox Demo Indicator Pill -->
-          <div id="demo-mode-pill" style="display: flex; align-items: center; gap: 8px; background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.3); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #4338ca;">
-            <span style="width: 8px; height: 8px; border-radius: 50%; background: #6366f1; box-shadow: 0 0 6px #6366f1; display: inline-block;"></span>
-            <span id="demo-pill-text">⚡ Sandbox Demo Active (90D Data)</span>
-            <button onclick="toggleDemoMode()" id="demo-switch-btn" type="button" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; font-size: 11px; font-weight: 600; color: #334155; padding: 2px 8px; cursor: pointer; transition: all 0.2s;">
-              Switch to Live Store
-            </button>
-          </div>
-
+        <div style="display: flex; align-items: center; gap: 10px;">
           <!-- Primary Action Button (Re-Sync CAPI Connection) -->
           <button id="header-sync-btn" onclick="handleSequentialSync()" title="Re-sync Shopify orders and Meta Ads insights" style="display: flex; align-items: center; gap: 6px; padding: 7px 16px; font-size: 12px; border-radius: 8px; border: none; background: #4338ca; color: #ffffff; font-weight: 600; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(67, 56, 202, 0.25); outline: none;">
             <svg id="header-sync-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.5s ease;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
             <span id="header-sync-text">Re-Sync CAPI Connection</span>
+          </button>
+
+          <!-- Sign Out Button -->
+          <button id="header-signout-btn" onclick="handleSignOut()" title="Sign out of platform" style="display: flex; align-items: center; gap: 6px; padding: 7px 12px; font-size: 12px; border-radius: 8px; border: 1px solid #e2e8f0; background: #ffffff; color: #64748b; font-weight: 600; cursor: pointer; transition: all 0.2s ease; outline: none; box-shadow: 0 1px 2px rgba(0,0,0,0.03);" onmouseenter="this.style.background='#f8fafc'; this.style.color='#0f172a'" onmouseleave="this.style.background='#ffffff'; this.style.color='#64748b'">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+            <span>Sign Out</span>
           </button>
         </div>
       </header>
