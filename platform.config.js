@@ -75,7 +75,7 @@ const PLATFORM_CONFIG = {
     appName: "TrueSignal",
     agencyName: "TrueSignal Intelligence",
     tagline: "Causal Attribution & Creative Intelligence",
-    badgeText: "PROPRIETARY ENGINE",
+    badgeText: "",
     primaryColor: "#4338ca",
     currency: "GBP", // "GBP" | "USD" | "EUR" | "AUD" | "CAD"
     currencySymbol: "£"

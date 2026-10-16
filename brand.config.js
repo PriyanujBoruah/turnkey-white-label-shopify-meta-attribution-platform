@@ -9,7 +9,7 @@ const BrandConfig = {
     appName: "TrueSignal",                              // Software / Platform Name
     agencyName: "TrueSignal Intelligence",              // Parent Company or Agency Name
     tagline: "Causal Attribution & Creative Engine",    // Sub-header / Tagline
-    badgeText: "BETA ONGOING",                         // Top right pill tag (e.g. "PROPRIETARY ENGINE", "AGENCY PRO", "BETA")
+    badgeText: "",                         // Top right pill tag (e.g. "PROPRIETARY ENGINE", "AGENCY PRO", "BETA")
     heroTitleWhite: "Master Creative Attribution &",
     heroTitleGradient: "Concept Intelligence",
     heroSubtitle: "Smartly group ad variations into master creative concepts, measure net profit & POAS per concept family, and scale winning ad assets with zero double-counting.",
