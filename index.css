@@ -2972,4 +2972,77 @@ body.view-assistant-active #site-footer {
   padding: 0 !important;
 }
 
+.sidebar.collapsed #nav-assistant .ai-copilot-icon,
+.sidebar.collapsed #nav-assistant svg {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+.sidebar.collapsed #nav-assistant > div {
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.sidebar.collapsed #nav-assistant .sidebar-badge-ai {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 4px 8px !important;
+  border-radius: 6px !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.3) !important;
+  margin: 0 auto !important;
+  line-height: 1 !important;
+}
+
+/* ==========================================================================
+   Assistant Chat Run/Send Button Fix
+   ========================================================================== */
+#assistant-send-btn,
+#assistant-bottom-bar button {
+  padding: 0 !important;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  max-width: 34px !important;
+  max-height: 34px !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  background: #4338ca !important;
+  border: none !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+}
+
+#assistant-send-btn:hover,
+#assistant-bottom-bar button:hover {
+  background: #3730a3 !important;
+}
+
+#assistant-send-btn svg,
+#assistant-bottom-bar button svg {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  display: block !important;
+  stroke: #ffffff !important;
+  stroke-width: 2.5px !important;
+  fill: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
 
