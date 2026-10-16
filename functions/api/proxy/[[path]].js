@@ -243,7 +243,9 @@ export async function onRequest(context) {
       }
 
       const mistralUrl = "https://api.mistral.ai/v1/chat/completions";
-      const mistralKey = env.MISTRAL_API_KEY || "";
+      const authHeader = request.headers.get("Authorization") || "";
+      const clientKey = (authHeader.startsWith("Bearer ") ? authHeader.replace(/^Bearer\s+/i, "") : "") || body.apiKey || "";
+      const mistralKey = env.MISTRAL_API_KEY || clientKey || "";
 
       const response = await fetch(mistralUrl, {
         method: "POST",

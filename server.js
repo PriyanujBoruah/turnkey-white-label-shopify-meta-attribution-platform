@@ -24,6 +24,11 @@ const url = require('url');
         }
       });
       console.log('⚡ [Server] Loaded environment configuration from .env');
+      try {
+        const platConf = require('./platform.config.js');
+        if (platConf.mistral?.apiKey && !process.env.MISTRAL_API_KEY) process.env.MISTRAL_API_KEY = platConf.mistral.apiKey;
+        if (platConf.firebase?.apiKey && !process.env.FIREBASE_API_KEY) process.env.FIREBASE_API_KEY = platConf.firebase.apiKey;
+      } catch (e) {}
     } catch (e) {
       console.warn('[Server] Could not parse .env file:', e.message);
     }

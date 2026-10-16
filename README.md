@@ -29,6 +29,38 @@
 
 ---
 
+## ⚙️ Single Master Configuration (`platform.config.js`)
+
+When acquiring or deploying the platform, **all primary API keys and settings are edited in one single file** in the project root:
+[`platform.config.js`](platform.config.js)
+
+```javascript
+const PLATFORM_CONFIG = {
+  mistral: {
+    apiKey: "your_mistral_api_key_here",
+    defaultModel: "ministral-14b-2512"
+  },
+  firebase: {
+    apiKey: "AIzaSy...",
+    authDomain: "your-app.firebaseapp.com",
+    projectId: "your-app-id"
+  },
+  cloudflare: {
+    accountId: "your_cloudflare_account_id",
+    d1DatabaseId: "your_d1_database_id"
+  },
+  brand: {
+    appName: "TrueSignal",
+    primaryColor: "#4338ca",
+    currency: "GBP",
+    currencySymbol: "£"
+  }
+};
+```
+Editing this one file automatically configures Firebase Authentication, Mistral AI Copilot, Cloudflare Edge functions, and branding across the entire application.
+
+---
+
 ## Getting Started
 
 1. **Test Drive Sandbox Demo:** Open `index.html` in any browser or launch local server and append `?demo=true`:
@@ -41,3 +73,4 @@
    cp .env.example .env
    ```
 3. **Deployment Guide:** See [DEPLOYMENT.md](DEPLOYMENT.md) and [ACQUISITION_MANUAL.md](ACQUISITION_MANUAL.md) for turnkey Cloudflare Pages hosting.
+

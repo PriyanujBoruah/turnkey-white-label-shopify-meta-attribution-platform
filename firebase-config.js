@@ -14,7 +14,9 @@ const defaultFirebaseConfig = {
 // Allow runtime override via window.FIREBASE_CONFIG or localStorage
 let activeFirebaseConfig = defaultFirebaseConfig;
 try {
-  if (typeof window !== 'undefined' && window.CUSTOM_FIREBASE_CONFIG) {
+  if (typeof window !== 'undefined' && window.PLATFORM_CONFIG && window.PLATFORM_CONFIG.firebase) {
+    activeFirebaseConfig = window.PLATFORM_CONFIG.firebase;
+  } else if (typeof window !== 'undefined' && window.CUSTOM_FIREBASE_CONFIG) {
     activeFirebaseConfig = window.CUSTOM_FIREBASE_CONFIG;
   } else if (typeof localStorage !== 'undefined') {
     const saved = localStorage.getItem('TRUESIGNAL_FIREBASE_CONFIG');

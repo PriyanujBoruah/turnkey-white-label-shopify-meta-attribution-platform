@@ -92,6 +92,14 @@ For the acquiring entrepreneur or agency, TrueSignal offers multiple rapid paths
 
 Deploying TrueSignal requires zero expensive server setups (no AWS EC2, no Kubernetes, no recurring Heroku bills).
 
+### Step 0: Single Master Configuration (`platform.config.js`)
+The entire application uses a **single master configuration file** located in the root directory: [`platform.config.js`](platform.config.js).
+Before or immediately after deploying, open this file to plug in your credentials:
+* **Mistral AI API Key:** (`mistral.apiKey`) — Powers the AI Copilot and reasoning analytics.
+* **Firebase Authentication:** (`firebase`) — Standard web config object from your Firebase console.
+* **Cloudflare D1 & Account:** (`cloudflare.d1DatabaseId`) — D1 Database ID for serverless analytics.
+* **Agency Branding:** (`brand`) — Your app name, company name, primary theme color, and currency.
+
 ### Step 1: Deploy to Cloudflare Pages (Free)
 1. Fork or clone the repository to your private GitHub account.
 2. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create Application** → **Pages** → **Connect to Git**.
@@ -101,7 +109,7 @@ Deploying TrueSignal requires zero expensive server setups (no AWS EC2, no Kuber
    * **Build output directory:** `/`
 4. Click **Save and Deploy**. Your application will be live globally within 60 seconds at `https://your-app.pages.dev`.
 
-### Step 2: Configure Environment Variables
+### Step 2: Configure Optional Environment Variables (Optional Server-Side Overrides)
 In Cloudflare Pages Settings → **Environment variables**, set:
 * `CLOUDFLARE_ACCOUNT_ID` — Your Cloudflare Account ID.
 * `D1_DATABASE_ID` — (Optional) Cloudflare D1 database ID for persistent serverless storage.

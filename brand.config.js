@@ -59,6 +59,21 @@ const BrandConfig = {
 (function applyBrandConfig() {
   // Allow localStorage override if configured in dashboard
   try {
+    // Override from single master platform.config.js if defined
+    if (typeof window !== 'undefined' && window.PLATFORM_CONFIG && window.PLATFORM_CONFIG.brand) {
+      const pb = window.PLATFORM_CONFIG.brand;
+      if (pb.appName) BrandConfig.brand.appName = pb.appName;
+      if (pb.agencyName) BrandConfig.brand.agencyName = pb.agencyName;
+      if (pb.tagline) BrandConfig.brand.tagline = pb.tagline;
+      if (pb.badgeText) BrandConfig.brand.badgeText = pb.badgeText;
+      if (pb.primaryColor) {
+        BrandConfig.theme.primaryColor = pb.primaryColor;
+        BrandConfig.theme.primaryHover = pb.primaryColor;
+      }
+      if (pb.currency) BrandConfig.localization.defaultCurrency = pb.currency;
+      if (pb.currencySymbol) BrandConfig.localization.currencySymbol = pb.currencySymbol;
+    }
+
     const savedConfig = localStorage.getItem('TRUESIGNAL_BRAND_CONFIG');
     if (savedConfig) {
       const parsed = JSON.parse(savedConfig);
