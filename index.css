@@ -2914,3 +2914,47 @@ body.drawer-open .main-content {
   box-shadow: 0 8px 24px rgba(67, 56, 202, 0.2), 0 3px 8px rgba(67, 56, 202, 0.12) !important;
   transition: box-shadow 0.2s ease !important;
 }
+
+/* ==========================================================================
+   TrueSignal AI Assistant - Full-Height Single Scrollbar Interface
+   ========================================================================== */
+body.view-assistant-active {
+  overflow: hidden !important;
+}
+
+body.view-assistant-active .main-content {
+  overflow: hidden !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+}
+
+body.view-assistant-active #site-footer {
+  display: none !important;
+}
+
+#view-assistant {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+#view-assistant > div {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+#assistant-scroll-container {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  overscroll-behavior: contain !important;
+}
+

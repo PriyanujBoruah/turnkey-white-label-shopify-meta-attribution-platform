@@ -2605,16 +2605,44 @@ function switchView(viewName, pushState = true) {
   views.forEach(v => {
     const el = document.getElementById(`view-${v}`);
     if (el) {
-      el.style.display = (v === normalizedView) ? (el.classList.contains('view-grid') ? 'grid' : (el.classList.contains('view-flex') ? 'flex' : 'block')) : 'none';
+      if (v === normalizedView) {
+        if (v === 'assistant') {
+          el.style.display = 'flex';
+          el.style.flexDirection = 'column';
+        } else {
+          el.style.display = el.classList.contains('view-grid') ? 'grid' : (el.classList.contains('view-flex') ? 'flex' : 'block');
+        }
+      } else {
+        el.style.display = 'none';
+      }
     }
   });
 
   const mainContentEl = document.querySelector('.main-content');
-  if (mainContentEl) {
-    mainContentEl.style.overflow = 'auto';
-    mainContentEl.style.height = '';
-    mainContentEl.style.minHeight = '';
-    mainContentEl.style.display = '';
+  const siteFooter = document.getElementById('site-footer');
+
+  if (normalizedView === 'assistant') {
+    document.body.classList.add('view-assistant-active');
+    if (mainContentEl) {
+      mainContentEl.style.overflow = 'hidden';
+      mainContentEl.style.height = '100vh';
+      mainContentEl.style.maxHeight = '100vh';
+    }
+    if (siteFooter) {
+      siteFooter.style.display = 'none';
+    }
+  } else {
+    document.body.classList.remove('view-assistant-active');
+    if (mainContentEl) {
+      mainContentEl.style.overflow = 'auto';
+      mainContentEl.style.height = '';
+      mainContentEl.style.maxHeight = '';
+      mainContentEl.style.minHeight = '';
+      mainContentEl.style.display = '';
+    }
+    if (siteFooter) {
+      siteFooter.style.display = 'flex';
+    }
   }
 
   views.forEach(n => {

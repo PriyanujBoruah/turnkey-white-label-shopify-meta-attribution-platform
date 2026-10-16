@@ -1974,7 +1974,7 @@
       </div>
 
       <!-- VIEW: ASSISTANT (FULL-SIZE AI ASSISTANT POWERED BY GOOGLE GEMMA 4 31B) -->
-      <div id="view-assistant" class="dashboard-view" style="display: none; width: 100%; height: calc(100vh - 65px); box-sizing: border-box; padding: 0; background: var(--bg-card); position: relative;">
+      <div id="view-assistant" class="dashboard-view view-flex" style="display: none; width: 100%; flex: 1 1 0%; min-height: 0; height: 100%; box-sizing: border-box; padding: 0 !important; margin: 0; background: var(--bg-card); position: relative; overflow: hidden;">
         <div style="display: flex; flex-direction: column; height: 100%; width: 100%; position: relative;">
           
           <!-- Assistant Top Bar -->
@@ -1996,7 +1996,7 @@
           </div>
 
           <!-- Main Scrollable Conversation & Hero Area -->
-          <div id="assistant-scroll-container" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; align-items: center; padding: 32px 20px; width: 100%; box-sizing: border-box;">
+          <div id="assistant-scroll-container" style="flex: 1 1 0%; min-height: 0; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; padding: 24px 20px; width: 100%; box-sizing: border-box; overscroll-behavior: contain;">
             
             <!-- Centered Minimal Hero (Shown on start / empty state) -->
             <div id="assistant-hero-view" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 680px; margin-top: 4vh; text-align: center;">
@@ -2070,7 +2070,7 @@
           </div>
 
           <!-- Bottom Sticky Input Bar (Shown when chat conversation is active) -->
-          <div id="assistant-bottom-bar" style="display: none; padding: 16px 24px; border-top: 1px solid var(--border-color); background: var(--bg-card); width: 100%; box-sizing: border-box; justify-content: center;">
+          <div id="assistant-bottom-bar" style="display: none; padding: 14px 24px; border-top: 1px solid var(--border-color); background: var(--bg-card); width: 100%; box-sizing: border-box; justify-content: center; flex-shrink: 0;">
             <div style="width: 100%; max-width: 820px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; align-items: center; padding: 8px 14px; gap: 10px;">
               <input type="text" id="assistant-bottom-input" onkeydown="handleAssistantKey(event)" placeholder="Ask Signal Assistant anything..." style="flex: 1; border: none; outline: none; font-size: 13.5px; color: var(--text-main); background: transparent;" />
               <button onclick="sendAssistantMessage()" onmouseenter="this.style.background='#3730a3'" onmouseleave="this.style.background='#4338ca'" style="width: 32px; height: 32px; border-radius: 8px; background: #4338ca; color: #ffffff; border: none; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 1px 3px rgba(67, 56, 202, 0.25); flex-shrink: 0;">
